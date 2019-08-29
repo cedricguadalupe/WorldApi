@@ -1,0 +1,46 @@
+swagger: "2.0"
+info:
+  description: "API World"
+  version: "1.0.0"
+  title: "API World"
+
+host: "localhost"
+basePath: "/v1"
+tags:
+  - name: "C"
+    description: "Rechercher des pays"
+schemes:
+  - "http"
+paths:
+  /ListCountries:
+    get:
+      tags:
+        - "Country"
+      summary: "Lister tous les pays"
+      description: ""
+      operationId: "listCountry"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "Succès"
+          schema:
+            type: "array"
+            items:
+              $ref: '#/definitions/Country'
+definitions:
+  Country:
+    type: "object"
+    properties:
+      Code:
+        type: "string"
+        example: "ABW"
+      Name:
+        type: "string"
+        example: "Aruba"
+      Population:
+        type: "integer"
+        example: 103000
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
